@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title> Plate Roulette </title>
+		<style> .login_status {
+			position: absolute;
+			top: 8px;
+			right: 16px
+		  }
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1> Welcome to Plate Roulette! </h1>
+		</div>
+
+		<div class="login_status">
+			<p> <%= login_status %> 
+				<% if logged_in? %>
+					<a href="/logout"> || Log out </a>
+				<% end %>
+			</p>
+		</div>
+
+		<%= yield %>
+
+	</body>
+
+</html>
