@@ -1,1 +1,22 @@
-signup.erb
+<h3> Create an account: </h3>
+
+<form action="/signup" method="POST">
+  <label> Username: </label>
+    <input type="text" id="username" name="username" placeholder="Enter username" >
+   
+    <br></br>
+  
+  <label> Email: </label>
+    <input type="text" id="email" name="email" placeholder="Enter email address" >
+  
+    <br></br>
+  
+  <label> Password: </label>
+    <input type="password" id="password" name="password" placeholder="Enter password" >
+  
+    <br></br>
+  
+  <input type="submit" id="submit" name="submit" value="Create Account">
+
+</form>
+
