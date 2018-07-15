@@ -11,7 +11,15 @@ class PlatesController < ApplicationController
   end
 
   post '/plates' do
+    if params[:main] != ""
+      @main = Main.find_by(id: params[:plate][:main_id])
+    else
+      @main = Main.find_by(id: params[:main])
+    end
+    @side1 = "side 1 - just testing for now"
+    @side2 = "side 2 - just testing for now"
     binding.pry
+    erb :"/plates/result"
   end
 
   get '/plates/:id' do

@@ -1,1 +1,25 @@
-result.erb
+<p> Your new plate is: </p>
+
+<h3> <%=@main.name %> </h3>
+
+<p> with </p>
+
+<h3> <%=@side1 %> </h3>
+
+<p> and </p>
+
+<h3> <%= @side2 %> </h3>
+
+<label> Like what you see? </label> 
+
+<form action="/result" method="POST">
+	<input type="submit" value="Save plate">
+</form>
+
+<label> Want to try again? </label>
+
+<form action="/respin" method="POST">
+	<input type="submit" value="Spin again">
+</form>
+
+
