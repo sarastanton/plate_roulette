@@ -10,21 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_14_051911) do
+ActiveRecord::Schema.define(version: 2018_07_15_040144) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
     t.integer "plate_id"
   end
 
-  create_table "plate_ingredients", force: :cascade do |t|
+  create_table "mains", force: :cascade do |t|
+    t.string "name"
     t.integer "plate_id"
-    t.integer "ingredient_id"
+  end
+
+  create_table "plate_mains", force: :cascade do |t|
+    t.integer "plate_id"
+    t.integer "main_id"
+  end
+
+  create_table "plate_sides", force: :cascade do |t|
+    t.integer "plate_id"
+    t.integer "side_id"
   end
 
   create_table "plates", force: :cascade do |t|
-    t.integer "ingredient_id"
+    t.string "main"
+    t.string "side"
     t.integer "user_id"
+  end
+
+  create_table "sides", force: :cascade do |t|
+    t.string "name"
+    t.integer "plate_id"
   end
 
   create_table "users", force: :cascade do |t|

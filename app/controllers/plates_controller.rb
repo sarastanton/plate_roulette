@@ -1,11 +1,13 @@
 class PlatesController < ApplicationController
 
   get '/' do
-  	erb: "/index"
+  	erb :"/index"
   end
 
   get '/plates/new' do
-  	erb: "/plates/new"
+    @mains = Main.all
+    @sides = Side.all
+  	erb :"/plates/new"
   end
 
   post '/plates' do
@@ -21,7 +23,7 @@ class PlatesController < ApplicationController
 
   delete '/plates/:id/delete' do
   	@plate = Plate.find_by(params[:id])
-  	if logged_in? @@ @plate.user == current_user
+  	if logged_in? && @plate.user == current_user
   		@plate.destroy
   	else
   		redirect "/"

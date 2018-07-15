@@ -1,1 +1,32 @@
-new.erb
+<h2> Spin the Plate Roulette! </h2>
+
+<form action="/plates" method="POST">
+
+<h4> Select a main ingredient: </h4>
+
+<% @mains.each do |main| %>
+	<p> <input type="radio" name="main[]" value="<%= main.name %>"> </p>
+<% end %>
+
+<br></br>
+
+<h4> Or, enter a new main ingredient: </h4>
+
+<br></br>
+
+<input type="text" name="main[name]">
+
+<br></br>
+
+<h4> Select 2 side ingredients: </h4>
+
+<% @sides.each do |side| %>
+	<p> <input type="checkbox" name="side[]" value="<%= side.name %>"> </p>
+<% end %>
+
+<br></br>
+
+<input type="submit" value="Spin the Roulette!">
+
+
+</form>
