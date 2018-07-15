@@ -11,6 +11,7 @@ class PlatesController < ApplicationController
   end
 
   post '/plates' do
+    binding.pry
   end
 
   get '/plates/:id' do
