@@ -12,23 +12,30 @@ class PlatesController < ApplicationController
 
   post '/plates' do
     @plate = Plate.new
-          binding.pry
+    @possible_mains = []
+    @possible_sides = []
 
     if params[:plate][:main] != ""
-      @main = Main.create(name: params[:plate][:main])
-    else
-      @main = Main.find_by(id: params[:plate][:main_id][])
+      @possible_mains << Main.create(name: params[:plate][:main])
     end
-    @plate.mains << @main
+      params[:plate][:main_ids].each do |id|
+        m = Main.find_by(id: id)
+        @possible_mains << m
+      end
 
-   if params[:plate][:side] != ""
-      @side = Side.create(name: params[:plate][:side])
-    else
-      @side = Side.find_by(id: params[:plate][:side_id][])
+    if params[:plate][:side] != ""
+      @possible_sides << Side.create(name: params[:plate][:side])
     end
-    @plate.sides << @side
+      params[:plate][:side_ids].each do |id|
+        s = Side.find_by(id: id)
+        @possible_sides << s
+      end
 
     erb :"/plates/result"
+  end
+
+  post "/respin" do
+    redirect "/plates/new"
   end
 
   get '/plates/:id' do

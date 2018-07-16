@@ -2,7 +2,7 @@
 
 <p> Mains: </p>
 
-<% @plate.mains.each do |main| %>
+<% @possible_mains.each do |main| %>
 
 	<%= main.name %>
 
@@ -10,30 +10,21 @@
 
 <p> Sides: </p>
 
-<% @plate.sides.each do |side| %>
+<% @possible_sides.each do |side| %>
 
 	<%= side.name %>
 
 <% end %>
 
+<br></br>
 
-<!-- <h3> <%=@main.name %> </h3>
-
-<p> with </p>
-
-<h3> <%=@side1 %> </h3>
-
-<p> and </p>
-
-<h3> <%= @side2 %> </h3> -->
-
-<label> Like what you see? </label> 
+<p> Like what you see? </p> 
 
 <form action="/result" method="POST">
 	<input type="submit" value="Save plate">
 </form>
 
-<label> Want to try again? </label>
+<p> Want to try again? </p>
 
 <form action="/respin" method="POST">
 	<input type="submit" value="Spin again">
