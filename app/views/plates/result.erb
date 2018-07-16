@@ -1,6 +1,23 @@
 <p> Your new plate is: </p>
 
-<h3> <%=@main.name %> </h3>
+<p> Mains: </p>
+
+<% @plate.mains.each do |main| %>
+
+	<%= main.name %>
+
+<% end %>
+
+<p> Sides: </p>
+
+<% @plate.sides.each do |side| %>
+
+	<%= side.name %>
+
+<% end %>
+
+
+<!-- <h3> <%=@main.name %> </h3>
 
 <p> with </p>
 
@@ -8,7 +25,7 @@
 
 <p> and </p>
 
-<h3> <%= @side2 %> </h3>
+<h3> <%= @side2 %> </h3> -->
 
 <label> Like what you see? </label> 
 

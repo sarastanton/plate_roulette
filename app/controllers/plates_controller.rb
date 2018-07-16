@@ -11,14 +11,23 @@ class PlatesController < ApplicationController
   end
 
   post '/plates' do
-    if params[:main] != ""
-      @main = Main.find_by(id: params[:plate][:main_id])
+    @plate = Plate.new
+          binding.pry
+
+    if params[:plate][:main] != ""
+      @main = Main.create(name: params[:plate][:main])
     else
-      @main = Main.find_by(id: params[:main])
+      @main = Main.find_by(id: params[:plate][:main_id][])
     end
-    @side1 = "side 1 - just testing for now"
-    @side2 = "side 2 - just testing for now"
-    binding.pry
+    @plate.mains << @main
+
+   if params[:plate][:side] != ""
+      @side = Side.create(name: params[:plate][:side])
+    else
+      @side = Side.find_by(id: params[:plate][:side_id][])
+    end
+    @plate.sides << @side
+
     erb :"/plates/result"
   end
 
