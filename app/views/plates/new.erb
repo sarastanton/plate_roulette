@@ -1,6 +1,9 @@
 <h2> Spin the Plate Roulette </h2>
 
+
 <form action="/plates" method="POST">
+
+<p> Not sure what to make for dinner tonight? Pick a few of the things you like below, and Plate Roulette will randomly build a plate for you! </p>
 
 <h4> Select all main ingredients you like (minimum 1): </h4>
 
@@ -9,7 +12,7 @@
 	<% end %>
 
 
-<h4> Or, enter a new main ingredient: </h4>
+<h4> And/or enter a new main ingredient: </h4>
 
 	<input type="text" name="plate[main]">
 
@@ -21,7 +24,7 @@
 		<p> <input type="checkbox" name="plate[side_ids][]" value="<%= side.id %>"> <%= side.name %> </p>
 	<% end %>
 
-<h4> Or, enter a new side ingredient: </h4>
+<h4> And/or enter a new side ingredient: </h4>
 
 	<input type="text" name="plate[side]">
 

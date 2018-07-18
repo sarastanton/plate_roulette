@@ -1,32 +1,28 @@
 <p> Your new plate is: </p>
 
-<p> Mains: </p>
+<h2> <%= @plate.main %> </h2>
 
-<% @possible_mains.each do |main| %>
+<p> with: </p>
 
-	<%= main.name %>
+<h2> <%= @plate.sides[0].name %> </h2>
 
-<% end %>
+<p> and: </p>
 
-<p> Sides: </p>
-
-<% @possible_sides.each do |side| %>
-
-	<%= side.name %>
-
-<% end %>
+<h2> <%= @plate.sides[1].name %> </h2>
 
 <br></br>
 
 <p> Like what you see? </p> 
 
-<form action="/result" method="POST">
+<form action="/plates/result/<%= @plate.id %>/save" method="POST">
 	<input type="submit" value="Save plate">
 </form>
 
+<br></br>
+
 <p> Want to try again? </p>
 
-<form action="/respin" method="POST">
+<form action="/plates/result/<%= @plate.id %>/respin" method="POST">
 	<input type="submit" value="Spin again">
 </form>
 
