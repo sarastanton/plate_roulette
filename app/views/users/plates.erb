@@ -1,8 +1,9 @@
 Your plates:
+<% binding.pry %>
 
 <ol>
 <% current_user.plates.each do |plate| %>
-	<li> <%= plate.main.capitalize %> with <%= plate.sides[0].name %> and <%= plate.sides[1].name %>
+	<li> <%= plate.mains[0].name %> with <%= plate.sides[0].name %> and <%= plate.sides[1].name %>
 	</li>
 	<% end %>
 

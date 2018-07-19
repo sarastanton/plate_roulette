@@ -1,3 +1,17 @@
+<% @main_names = [] %>
+<% @side_names = [] %>
+
+<% @mains.each do |main| %>
+	<% @main_names << main.name %>
+<% end %>
+
+<% @sides.each do |side| %>
+	<% @side_names << side.name %>
+<% end %>
+
+<% @mains_sorted = @main_names.sort %>
+<% @sides_sorted = @side_names.sort %>
+
 <h2> Spin the Plate Roulette </h2>
 
 
@@ -7,8 +21,8 @@
 
 <h4> Select all main ingredients you like (minimum 1): </h4>
 
-	<% @mains.each do |main| %>
-		<p> <input type="checkbox" name="plate[main_ids][]" value="<%= main.id %>"> <%= main.name %> </p>
+	<% @mains_sorted.each do |main| %>
+		<p> <input type="checkbox" name="plate[main_ids][]" value="<%= main %>"> <%= main %> </p>
 	<% end %>
 
 
@@ -20,8 +34,8 @@
 
 <h4> Select all side ingredients you like (minimum 2): </h4>
 
-	<% @sides.each do |side| %>
-		<p> <input type="checkbox" name="plate[side_ids][]" value="<%= side.id %>"> <%= side.name %> </p>
+	<% @sides_sorted.each do |side| %>
+		<p> <input type="checkbox" name="plate[side_ids][]" value="<%= side %>"> <%= side %> </p>
 	<% end %>
 
 <h4> And/or enter a new side ingredient: </h4>

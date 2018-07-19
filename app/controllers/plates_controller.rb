@@ -18,9 +18,9 @@ class PlatesController < ApplicationController
     gather_the_possibles
     spin_the_roulette
     @plate = Plate.new
-    @plate.main = Main.find_by_id(@main_selection.id).name
-    @plate.sides << @side_number_1
-    @plate.sides << @side_number_2
+    @plate.mains << Main.find_by(name: @main_selection)
+    @plate.sides << Side.find_by(name: @side_number_1)
+    @plate.sides << Side.find_by(name: @side_number_2)
     @plate.save
     redirect "/plates/result/#{@plate.id}"
   end
@@ -32,7 +32,6 @@ class PlatesController < ApplicationController
     @plate = Plate.find_by_id(params[:id])
     erb :"/plates/result"
   end
-
 
   post "/plates/result/:id/respin" do
     Plate.find_by_id(params[:id]).delete
