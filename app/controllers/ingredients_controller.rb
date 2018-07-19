@@ -4,9 +4,10 @@ class IngredientsController < ApplicationController
  	 if !logged_in?
       redirect "/"
     end
-	    @mains = Main.all
-	    @sides = Side.all
-	    erb :"/ingredients/index"
+    @mains = Main.all
+    @sides = Side.all
+    sort_by_alpha
+    erb :"/ingredients/index"
   end
 
   post "/ingredients" do

@@ -58,4 +58,20 @@ class ApplicationController < Sinatra::Base
       end
     end
 
+    def sort_by_alpha 
+      @main_names = [] 
+      @side_names = []
+
+       @mains.each do |main| 
+         @main_names << main.name
+       end
+
+       @sides.each do |side|
+        @side_names << side.name
+       end
+
+      @mains_sorted = @main_names.sort
+      @sides_sorted = @side_names.sort
+    end
+
  end

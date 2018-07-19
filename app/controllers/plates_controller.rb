@@ -11,6 +11,7 @@ class PlatesController < ApplicationController
     end
     @mains = Main.all
     @sides = Side.all
+    sort_by_alpha
   	erb :"/plates/new"
   end
 
