@@ -10,7 +10,8 @@
 <% if logged_in? %>
 
 	<p> Welcome back, <%= current_user.username %>! </p>
-	<p> <a href="/users/plates"> Click here </a> to see your saved plates, or </p>
-	<p> <a href="/plates/new"> Click here </a> to create a new plate </p>
+	<p> <a href="/users/plates"> Click here </a> to see your saved plates, </p>
+	<p> <a href="/plates/new"> Click here </a> to create a new plate, or </p>
+	<p> <a href="/ingredients"> Click here </a> to see all ingredient options
 
 <% end %>

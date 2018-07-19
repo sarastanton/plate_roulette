@@ -1,0 +1,47 @@
+<p> Here are all of the mains and sides you can choose from: </p> 
+
+
+<% @main_names = [] %>
+<% @side_names = [] %>
+
+<% @mains.each do |main| %>
+	<% @main_names << main.name %>
+<% end %>
+
+<% @sides.each do |side| %>
+	<% @side_names << side.name %>
+<% end %>
+
+<% @mains_sorted = @main_names.sort %>
+<% @sides_sorted = @side_names.sort %>
+
+<h4> Mains: </h4>
+	<ul>
+		<% @mains_sorted.sort.each do |main| %>
+			<li> <%= main %> </li>
+		<% end %>
+	</ul>
+
+<h4> Sides: </h4>
+	<ul>
+		<% @sides_sorted.sort.each do |side| %>
+			<li> <%= side %> </li>
+		<% end %>
+	</ul>
+
+<p> Don't see your favorites on this list? Add your own! </p>
+
+<form action="/ingredients" method="POST">
+	<input type="text" name="new_ingredient" placeholder="Type here">
+	
+	<p> Is this a main or a side? </p>
+
+	<input type="radio" name="selector" value="main"> Main <br>
+	<input type="radio" name="selector" value="side"> Side <br>
+
+<p></p>
+
+	<input type="submit" value="Save new ingredient">
+</form>
+
+<h3> Ready to give it a try? <a href="/plates/new"> Click here </a> to try it out! </h3>

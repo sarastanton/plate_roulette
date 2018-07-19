@@ -4,6 +4,7 @@ class PlatesController < ApplicationController
   	erb :"/index"
   end
 
+ 
   get '/plates/new' do
     if !logged_in?
       redirect "/"
@@ -25,6 +26,9 @@ class PlatesController < ApplicationController
   end
 
   get "/plates/result/:id" do
+    if !logged_in?
+      redirect "/"
+    end
     @plate = Plate.find_by_id(params[:id])
     erb :"/plates/result"
   end
@@ -43,11 +47,15 @@ class PlatesController < ApplicationController
   end
 
   get '/plates/:id' do
+    if !logged_in?
+      redirect "/"
+    end
   	@plate = Plate.find_by(id: params[:id])
-  	if logged_in?
-  		erb :"/plates/show"
-  	else redirect "/"
-  	end
+    if current_user == @plate.user
+  	erb :"/plates/show"
+    else
+      redirect "/users/plates"
+    end
   end
 
   delete '/plates/:id/delete' do

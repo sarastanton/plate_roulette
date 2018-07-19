@@ -2,8 +2,12 @@ Your plates:
 
 <ol>
 <% current_user.plates.each do |plate| %>
-	<li> <%= plate.main %> with <%= plate.sides[0].name %> and <%= plate.sides[1].name %>
+	<li> <%= plate.main.capitalize %> with <%= plate.sides[0].name %> and <%= plate.sides[1].name %>
 	</li>
 	<% end %>
 
 </ol>
+
+
+<br></br>
+<a href="/">Home</a>
