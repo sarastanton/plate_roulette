@@ -2,7 +2,7 @@
 
 ## OVERVIEW
 
-Not sure what to make for dinner tonight? Pick a few of your favorite ingredients (or add your own), and Plate Roulette will randomly generate a plate! Users can create an account and save plates to view later.
+Not sure what to make for dinner tonight? Pick a few of your favorite ingredients (or add your own), and Plate Roulette will randomly generate a plate! Users can create an account and save plates to view later. Plate Roulette also features an MVC framework and CRUD functionality.
 
 ## INSTALLATION
 
