@@ -1,0 +1,13 @@
+<p> Are you sure you want to delete this plate? </p>
+
+<h4> <%= @plate.mains[0].name.capitalize %> with <%= @plate.sides.first.name %> and <%= @plate.sides.last.name %> </h4>
+
+
+<form action="/plates/<%= @plate.id %>" method="POST">
+	<input type="hidden" id="hidden" name="_method" value="DELETE">
+	<input type="submit" value="Yes, delete">
+</form>
+
+<br></br>
+
+<a href="/plates">No, I changed my mind</a>

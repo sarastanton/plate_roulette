@@ -73,11 +73,14 @@ class PlatesController < ApplicationController
       end
 
       @plate.save
-      binding.pry
 
       redirect "/plates/#{@plate.id}"
     end
 
+    get "/plates/:id/delete" do
+      @plate = Plate.find_by_id(params[:id])
+      erb :"plates/delete"
+    end
 
   post "/plates/:id/respin" do
     Plate.find_by_id(params[:id]).delete
@@ -103,13 +106,12 @@ class PlatesController < ApplicationController
     end
   end
 
-  delete "/plates/:id/" do
-  	@plate = Plate.find_by(params[:id])
-  	if logged_in? && @plate.user == current_user
+  delete "/plates/:id" do
+  	@plate = Plate.find_by_id(params[:id])
+  	if logged_in? && @plate.user_id == current_user.id
   		@plate.destroy
-  	else
-  		redirect "/"
-  	end
+    end
+  		redirect "/plates"
   end
 
 end

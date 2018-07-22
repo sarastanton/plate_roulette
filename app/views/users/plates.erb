@@ -9,7 +9,7 @@ Your plates:
 	<ol>
 	<% current_user.plates.each do |plate| %>
 		<li> <%= plate.mains[0].name.capitalize %> with <%= plate.sides.first.name %> and <%= plate.sides.last.name %>
-
+			( <a href="plates/<%=plate.id%>/edit"> Edit</a> | <a href="plates/<%=plate.id%>/delete"> Delete</a> )
 
 		</li>
 		<% end %>
