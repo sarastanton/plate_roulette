@@ -42,8 +42,4 @@ class UsersController < ApplicationController
 		redirect "/"
 	end
 
-	get "/users/plates" do
-		erb :"/users/plates"
-	end
-
 end

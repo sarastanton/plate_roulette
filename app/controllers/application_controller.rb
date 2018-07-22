@@ -69,7 +69,6 @@ class ApplicationController < Sinatra::Base
        @sides.each do |side|
         @side_names << side.name
        end
-
       @mains_sorted = @main_names.sort
       @sides_sorted = @side_names.sort
     end

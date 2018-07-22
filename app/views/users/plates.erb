@@ -1,13 +1,20 @@
+<% if current_user.plates == [] %>
+
+<p> You do not have any saved plates yet. <a href="/plates/new">Click here </a> to get started! </p>
+
+<% else %>
+
 Your plates:
 
-<ol>
-<% current_user.plates.each do |plate| %>
-	<li> <%= plate.mains[0].name.capitalize %> with <%= plate.sides[0].name %> and <%= plate.sides[1].name %>
-	</li>
-	<% end %>
-
-</ol>
+	<ol>
+	<% current_user.plates.each do |plate| %>
+		<li> <%= plate.mains[0].name.capitalize %> with <%= plate.sides.first.name %> and <%= plate.sides.last.name %>
 
 
-<br></br>
-<a href="/">Home</a>
+		</li>
+		<% end %>
+
+	</ol>
+
+<% end %>
+

@@ -4,17 +4,17 @@
 
 <p> with: </p>
 
-<h2> <%= @plate.sides[0].name %> </h2>
+<h2> <%= @plate.sides.first.name %> </h2>
 
 <p> and: </p>
 
-<h2> <%= @plate.sides[1].name %> </h2>
+<h2> <%= @plate.sides.last.name %> </h2>
 
 <br></br>
 
 <p> Like what you see? </p> 
 
-<form action="/plates/result/<%= @plate.id %>/save" method="POST">
+<form action="/plates/<%= @plate.id %>/save" method="POST">
 	<input type="submit" value="Save plate">
 </form>
 
@@ -22,7 +22,7 @@
 
 <p> Want to try again? </p>
 
-<form action="/plates/result/<%= @plate.id %>/respin" method="POST">
+<form action="/plates/<%= @plate.id %>/respin" method="POST">
 	<input type="submit" value="Spin again">
 </form>
 

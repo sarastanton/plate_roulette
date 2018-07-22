@@ -1,0 +1,40 @@
+<h3> Edit a plate </h3>
+
+___________________________________
+<p> Current main for selected plate: </p>
+
+<h2> <%= @plate.mains[0].name %> </h2>
+
+<p> New main: </p>
+
+<form action="/plates/<%= @plate.id %>" method="POST">
+	<input type="hidden" id="hidden" name="_method" value="patch">
+	<input type="text" name="new_main">
+
+<br></br>
+___________________________________
+<p> Current first side for selected plate: </p>
+
+<h2> <%= @plate.sides.first.name %> </h2>
+
+<p> New first side: </p>
+
+	<input type="hidden" id="hidden" name="_method" value="patch">
+	<input type="text" name="new_side_1">
+
+<br></br>
+___________________________________
+<p> Current second side for selected plate: </p>
+
+<h2> <%= @plate.sides.last.name %> </h2>
+
+<p> New second side: </p>
+
+	<input type="hidden" id="hidden" name="_method" value="patch">
+	<input type="text" name="new_side_2">
+
+<br></br>
+
+<input type="Submit" value="Save plate">
+
+</form>
