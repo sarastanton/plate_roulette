@@ -4,13 +4,16 @@
 		<title> Plate Roulette </title>
 		<style> 
 			.login_status {
-			position: absolute;
-			top: 8px;
-			right: 16px
+				position: absolute;
+				top: 8px;
+				right: 16px
 		  }
-		  	.flash {
+		  	.error {
 		  		color: red;
 		  	}
+		  	.success {
+		  		color: green;
+		  	}	
 		</style>
 	</head>
 
@@ -32,9 +35,17 @@
 
 	</body>
 
-	<div class="flash">
-		<% if flash[:message] != "" %>
-	 		<p> <%= flash[:message] %> </p>
+	<br></br>
+	
+	<div class="error">
+		<% if flash[:error] != "" %>
+	 		<p> <%= flash[:error] %> </p>
+		<% end %>
+	</div>
+
+	<div class="success">
+		<% if flash[:success] != "" %>
+	 		<p> <%= flash[:success] %> </p>
 		<% end %>
 	</div>
 

@@ -10,14 +10,13 @@ class UsersController < ApplicationController
 
 	post "/signup" do
 		@user = User.new(username: params[:username], email: params[:email], password: params[:password])
-				flash[:message] = "this is a test flash message"
-
 		@user.save
 		if @user.save
 			session[:user_id] = @user.id
+			flash[:success] = "Successfully signed up."
 			redirect "/"
 		else
-			flash[:message] = "There was an error with sigunup - please try again!"
+			flash[:error] = "There was an error with sigunup - please try again!"
 			redirect "/signup"
 		end
 	end
@@ -34,14 +33,17 @@ class UsersController < ApplicationController
 		user = User.find_by(username: params[:username])
 		if user && user.authenticate(params[:password])
 			session[:user_id] = user.id
+			flash[:success] = "Successfully signed in."
 			redirect "/"
 		else
+			flash[:error] = "There was an error with login - please try again!"
 			redirect "/login"
 		end
 	end
 
 	get "/logout" do
 		session.clear
+		flash[:success] = "Successfully logged out."
 		redirect "/"
 	end
 

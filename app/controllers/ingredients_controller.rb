@@ -16,6 +16,7 @@ class IngredientsController < ApplicationController
     elsif params[:selector] == "side"
       Side.create(name: params[:new_ingredient])
     end
+      flash[:success] = "Successfully created new ingredient."
       
     redirect "/ingredients"
   end
