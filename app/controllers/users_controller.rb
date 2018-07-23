@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 			flash[:success] = "Successfully signed up."
 			redirect "/"
 		else
-			flash[:error] = "There was an error with sigunup - please try again!"
+			flash[:error] = "There was an error with signup - please try again!"
 			redirect "/signup"
 		end
 	end
