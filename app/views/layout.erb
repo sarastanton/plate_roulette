@@ -2,11 +2,15 @@
 <html>
 	<head>
 		<title> Plate Roulette </title>
-		<style> .login_status {
+		<style> 
+			.login_status {
 			position: absolute;
 			top: 8px;
 			right: 16px
 		  }
+		  	.flash {
+		  		color: red;
+		  	}
 		</style>
 	</head>
 
@@ -28,9 +32,11 @@
 
 	</body>
 
-	<% if flash[:message] != "" %>
- 		<h3> <%= flash[:message] %> </h3>
-	<% end %>
+	<div class="flash">
+		<% if flash[:message] != "" %>
+	 		<p> <%= flash[:message] %> </p>
+		<% end %>
+	</div>
 
 </html>
 
