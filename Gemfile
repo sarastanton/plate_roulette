@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) {|repo_name| "https://github.com/sarastanton/plate_roulette" }
 
 # gem "rails"
 gem 'sinatra'
@@ -16,3 +16,5 @@ gem 'rack'
 gem 'shotgun'
 gem 'require_all'
 gem 'bcrypt'
+gem 'rack-flash3'
+gem 'sinatra-flash'

@@ -28,10 +28,9 @@
 
 	</body>
 
-	<br></br>
-	<br></br>
-
-
+	<% if flash[:message] != "" %>
+ 		<h3> <%= flash[:message] %> </h3>
+	<% end %>
 
 </html>
 
