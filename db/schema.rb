@@ -12,11 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_07_15_040144) do
 
-  create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-    t.integer "plate_id"
-  end
-
   create_table "mains", force: :cascade do |t|
     t.string "name"
     t.integer "plate_id"
