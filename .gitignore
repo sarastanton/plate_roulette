@@ -12,7 +12,6 @@
 
 # Personal notes
 Project_notes.md
-spec.md
 
 # Used by dotenv library to load environment variables.
 # .env

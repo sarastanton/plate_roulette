@@ -1,7 +1,7 @@
 mains = {
 	"grilled chicken" => {
 	}, 
-	"salmon filets" => {
+	"salmon" => {
 	},  
 	"ground beef" => {
 	},  
@@ -11,7 +11,7 @@ mains = {
 	}, 
 	"steak" => {
 	}, 
-	"tuna steaks" => {
+	"tuna" => {
 	},  
 	"meatballs" => {
 	},  
@@ -22,6 +22,8 @@ mains = {
 	"meatloaf" => {
 	},
 	"tilapia filets" => {
+	},
+	"soup" => {
 	}	
   }
 
@@ -51,8 +53,6 @@ sides = {
 	"kale" => {
 	},
 	"stuffed peppers" => {
-	},
-	"soup" => {
 	},
 	"asparagus" => {
 	},

@@ -15,7 +15,7 @@ class PlatesController < ApplicationController
  
   get "/plates/new" do
     if !logged_in?
-      flash[:error] "Must be logged in to spin the Plate Roulette."
+      flash[:error] = "Must be logged in to spin the Plate Roulette."
       redirect "/"
     end
     @mains = Main.all
