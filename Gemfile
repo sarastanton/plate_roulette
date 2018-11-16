@@ -12,7 +12,7 @@ gem 'rake'
 gem 'pry'
 gem 'sinatra-activerecord'
 gem 'tux'
-gem 'rack'
+gem "rack", ">= 2.0.6"
 gem 'shotgun'
 gem 'require_all'
 gem 'bcrypt'
