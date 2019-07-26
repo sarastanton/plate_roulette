@@ -12,13 +12,13 @@ gem 'require_all'
 gem 'bcrypt'
 gem 'rack-flash3'
 gem 'sinatra-flash'
+gem 'pry'
 
 group :production do
 	gem 'pg'
 end
 
 group :development, :test do
-	gem 'pry'
 	gem 'sqlite3'
   gem 'tux'
 end
