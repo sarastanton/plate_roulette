@@ -1,7 +1,7 @@
 class PlatesController < ApplicationController
 
   get "/" do
-  	erb :"/index"
+    erb :"/index"
   end
 
   get "/plates" do
@@ -12,7 +12,7 @@ class PlatesController < ApplicationController
       redirect "/"
     end
   end
- 
+
   get "/plates/new" do
     if !logged_in?
       flash[:error] = "Must be logged in to spin the Plate Roulette."
@@ -47,7 +47,7 @@ class PlatesController < ApplicationController
   get "/plates/:id/edit" do
     @plate = Plate.find_by_id(params[:id])
     if logged_in? && @plate.user == current_user
-        erb :"/plates/edit"
+      erb :"/plates/edit"
     else
       flash[:error] = "Plates can only be edited by their original user."
       redirect "/plates"
@@ -56,13 +56,14 @@ class PlatesController < ApplicationController
 
   patch "/plates/:id" do
     @plate = Plate.find_by_id(params[:id])
+
     if params[:new_main] != ""
       m = Main.find_or_create_by(name: params[:new_main])
       @plate.mains.clear
       @plate.mains << m
     end
 
-     if params[:new_side_1] != ""
+    if params[:new_side_1] != ""
       s1 = Side.find_or_create_by(name: params[:new_side_1])
       holder = []
       holder << @plate.sides
@@ -71,7 +72,7 @@ class PlatesController < ApplicationController
       @plate.sides << holder
     end
 
-      if params[:new_side_2] != ""
+    if params[:new_side_2] != ""
       s2 = Side.find_or_create_by(name: params[:new_side_2])
       @plate.sides << (s2)
     end
@@ -106,14 +107,14 @@ class PlatesController < ApplicationController
   end
 
   delete "/plates/:id" do
-  	@plate = Plate.find_by_id(params[:id])
+    @plate = Plate.find_by_id(params[:id])
   	if logged_in? && @plate.user_id == current_user.id
-  		@plate.destroy
+      @plate.destroy
       flash[:succes] = "Successfully deleted plate."
     else
       flash[:error] = "Plates can only be deleted by their original user."
     end
-  		redirect "/plates"
+      redirect "/plates"
   end
 
 end

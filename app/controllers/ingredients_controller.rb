@@ -12,12 +12,12 @@ class IngredientsController < ApplicationController
 
   post "/ingredients" do
     if params[:selector] == "main"
-      Main.create(name: params[:new_ingredient])
+      Main.create(name: params[:new_ingredient].strip)
     elsif params[:selector] == "side"
-      Side.create(name: params[:new_ingredient])
+      Side.create(name: params[:new_ingredient].strip)
     end
       flash[:success] = "Successfully created new ingredient."
-      
+
     redirect "/ingredients"
   end
 

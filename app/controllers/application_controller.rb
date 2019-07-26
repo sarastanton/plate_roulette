@@ -47,9 +47,9 @@ class ApplicationController < Sinatra::Base
       end
       if !!params[:plate][:main_ids]
         params[:plate][:main_ids].each do |m|
-        @possible_mains << m
-      end
+          @possible_mains << m
         end
+      end
 
       if params[:plate][:side] != ""
         Side.create(name: params[:plate][:side])
@@ -61,17 +61,17 @@ class ApplicationController < Sinatra::Base
       end
     end
 
-    def sort_by_alpha 
-      @main_names = [] 
+    def sort_by_alpha
+      @main_names = []
       @side_names = []
 
-       @mains.each do |main| 
-         @main_names << main.name
-       end
+      @mains.each do |main|
+        @main_names << main.name
+      end
 
-       @sides.each do |side|
+      @sides.each do |side|
         @side_names << side.name
-       end
+      end
       @mains_sorted = @main_names.sort
       @sides_sorted = @side_names.sort
     end
