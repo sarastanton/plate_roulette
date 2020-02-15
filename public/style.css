@@ -1,0 +1,91 @@
+body {
+  font-family: sans-serif;
+  color: darkblue;
+  font-size: 14pt;
+  background-color: rgb(245,245,245);
+}
+
+.login-status {
+  margin: 0 10px;
+  height: 21px;
+}
+
+p {
+  margin: 0;
+  padding-bottom: 1rem;
+  font-size: 14pt;
+}
+
+li {
+  font-size: 14pt;
+}
+
+ul {
+  background-color: rgb(245,245,245);
+  margin: 0;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+}
+
+.success {
+  color: darkgreen;
+}
+
+.flash {
+  background-color: rgb(245,245,245);
+  padding: 10px;
+}
+
+.header-bar {
+  background-color: darkturquoise;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 3px darkblue;
+  box-shadow:  0 8px 6px -6px darkslategray;;
+  z-index: 10;
+}
+
+.page {
+  background-color: rgb(245,245,245);
+  height: 100vh;
+  padding-left: 10px;
+}
+
+form {
+  background-color: rgb(245,245,245);
+  padding-left: 10px;
+}
+
+.page form {
+  padding: 0;
+}
+
+h1 {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+h3 {
+  padding-top: 20px;
+  margin: 0;
+  background-color: rgb(245,245,245);
+}
+
+h4 {
+  background-color: rgb(245,245,245);
+  margin: 0;
+  padding: 20px 0;
+}
+
+a {
+  font-weight: bold;
+}
+
+a:visited {
+  color: lightblue;
+}

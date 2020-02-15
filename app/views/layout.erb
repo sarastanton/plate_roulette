@@ -2,52 +2,47 @@
 <html>
 	<head>
 		<title> Plate Roulette </title>
-		<style> 
-			.login_status {
-				position: absolute;
-				top: 8px;
-				right: 16px
-		  }
-		  	.error {
-		  		color: red;
-		  	}
-		  	.success {
-		  		color: green;
-		  	}	
-		</style>
+		<link rel="stylesheet" type="text/css" href="/style.css">
 	</head>
 
 	<body>
-		<div class="container">
+
+		<div class="header-bar">
+
 			<h1> Welcome to Plate Roulette! </h1>
+
+			<div class="login-status">
+				<p> <%= login_status_display %>
+					<% if logged_in? %>
+						|  <a href="/">Home</a>
+						|  <a href="/logout">Log out </a>
+					<% end %>
+				</p>
+			</div> <!-- .login-status -->
+
+		</div>  <!-- .header-bar -->
+
+		<div class="flash error">
+			<% if flash[:error] != "" %>
+			<p> <%= flash[:error] %> </p>
+			<% end %>
 		</div>
 
-		<div class="login_status">
-			<p> <%= login_status_display %> 
-				<% if logged_in? %>
-					|| <a href="/">Home</a>
-					|| <a href="/logout">Log out </a>
-				<% end %>
-			</p>
+		<div class="flash success">
+			<% if flash[:success] != "" %>
+		 		<p> <%= flash[:success] %> </p>
+			<% end %>
 		</div>
 
-		<%= yield %>
+		<div class="page">
+			<%= yield %>
+		</div>
 
 	</body>
 
 	<br></br>
-	
-	<div class="error">
-		<% if flash[:error] != "" %>
-	 		<p> <%= flash[:error] %> </p>
-		<% end %>
-	</div>
 
-	<div class="success">
-		<% if flash[:success] != "" %>
-	 		<p> <%= flash[:success] %> </p>
-		<% end %>
-	</div>
+
+
 
 </html>
-
