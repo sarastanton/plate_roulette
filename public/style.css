@@ -1,7 +1,11 @@
-body {
-  font-family: sans-serif;
+/* FONTS
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+*/
+
+* {
+  font-family: 'Roboto Condensed', sans-serif;
   color: darkblue;
-  font-size: 14pt;
   background-color: rgb(245,245,245);
 }
 
@@ -10,10 +14,10 @@ body {
   height: 21px;
 }
 
-p {
+p, label {
   margin: 0;
   padding-bottom: 1rem;
-  font-size: 14pt;
+  font-size: 16pt;
 }
 
 li {
@@ -25,12 +29,12 @@ ul {
   margin: 0;
 }
 
-.error {
+.error p {
   color: red;
   margin-top: 5px;
 }
 
-.success {
+.success p {
   color: darkgreen;
 }
 
@@ -39,35 +43,38 @@ ul {
   padding: 10px;
 }
 
-.header-bar {
+#header-bar {
   background-color: darkturquoise;
-  padding: 30px 0;
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid 3px darkblue;
+  border-bottom: solid 3px black;
   box-shadow:  0 8px 6px -6px darkslategray;;
   z-index: 10;
 }
 
-.page {
-  background-color: rgb(245,245,245);
-  height: 100vh;
-  padding-left: 10px;
+#header-bar > h1, #header-bar p, #header-bar a {
+  background-color: darkturquoise;
 }
 
 form {
   background-color: rgb(245,245,245);
-  padding-left: 10px;
+  padding-top: 10px;
 }
 
-.page form {
-  padding: 0;
+input {
+  margin-left: 10px;
+}
+
+form p {
+  padding: 30px 10px 20px;
 }
 
 h1 {
   margin: 0 10px;
   display: inline-block;
+  font-family: 'Lato', sans-serif;
 }
 
 h3 {
@@ -88,4 +95,19 @@ a {
 
 a:visited {
   color: lightblue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 1em 10px;
+}
+
+.page {
+  background-color: rgb(245,245,245);
+  height: 100vh;
+}
+
+.page > p {
+  padding-left: 10px;
 }

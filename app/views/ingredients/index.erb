@@ -1,13 +1,13 @@
-<p> Here are all of the mains and sides you can choose from: </p> 
+<h2> Here are all of the mains and sides you can choose from: </h2>
 
-<h4> Mains: </h4>
+<h2> Mains: </h2>
 	<ul>
 		<% @mains_sorted.sort.each do |main| %>
 			<li> <p> <%= main %> </li> </p>
 		<% end %>
 	</ul>
 
-<h4> Sides: </h4>
+<h2> Sides: </h2>
 	<ul>
 		<% @sides_sorted.sort.each do |side| %>
 			<li> <p> <%= side %> </li> </p>
@@ -18,13 +18,14 @@
 
 <form action="/ingredients" method="POST">
 	<input type="text" name="new_ingredient" placeholder="Type here">
-	
+
 	<p> Is this a main or a side? </p>
 
 	<input type="radio" name="selector" value="main"> Main <br>
 	<input type="radio" name="selector" value="side"> Side <br>
 
-<p></p>
+	<br />
+	<br />
 
 	<input type="submit" value="Save new ingredient">
 </form>
